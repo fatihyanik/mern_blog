@@ -3,7 +3,7 @@ import Login from './components/account/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{margin:'64px'}}>
       <Login />
     </div>
   );

@@ -1,11 +1,22 @@
 import './App.css';
 import Login from './components/account/Login';
+import Home from './components/home/Home';
+import DataProvider from './context/DataProvider';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
-    <div style={{margin:'64px'}}>
-      <Login />
-    </div>
+    <DataProvider>
+      <BrowserRouter>
+      
+      <div style={{ margin: '64px' }}>
+        <Routes>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/home' element={<Home />}/>
+        </Routes>
+      </div>
+      </BrowserRouter>
+    </DataProvider>
   );
 }
 

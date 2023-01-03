@@ -9,6 +9,7 @@ import Header from './components/header/Header';
 import Home from './components/home/Home';
 
 import Login from './components/account/Login';
+import CreatePost from './components/create/CreatePost';
 
 const PrivateRoute = ({ isAuthenticated, ...props }) => {
   const token = sessionStorage.getItem('accessToken');
@@ -32,6 +33,10 @@ function App() {
 
             <Route path='/' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
               <Route path='/' element={<Home />} />
+            </Route>
+
+            <Route path='/create' element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
+              <Route path='/create' element={<CreatePost />} />
             </Route>
 
          
